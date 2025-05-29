@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Si ton dossier 'TouchePasAuxKlaxon' est à la racine, la RewriteBase doit être '/'
+RewriteBase /TouchePasAuxKlaxon/public/
+
+# Les deux conditions suivantes permettent de ne pas réécrire les fichiers physiques
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirection vers 'index.php'
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

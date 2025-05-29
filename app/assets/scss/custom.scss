@@ -1,0 +1,122 @@
+// 1. Variables personnalisées (couleurs, fonts, etc.)
+$body-bg: #f1f8fc;
+$primary: #0074c7;
+$primary-dark: #00497c;
+$secondary: #384050;
+$danger: #cd2c2e;
+$success: #82b864;
+
+// 2. Définition de la palette Bootstrap pour surcharger les couleurs de thème
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
+);
+
+// 3. Import Bootstrap (avec variables personnalisées)
+@import "bootstrap/scss/bootstrap";
+// 4. Styles globaux
+body {
+  background-color: $body-bg;
+  color: $secondary;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // tu peux personnaliser ici
+}
+
+// Navbar personnalisée
+.navbar-dark.bg-dark {
+  background-color: $primary-dark !important;
+}
+
+.navbar-brand {
+  color: $body-bg !important;
+  font-weight: bold;
+}
+
+// Boutons personnalisés
+.btn-outline-light {
+  color: $primary;
+  border-color: $primary;
+
+  &:hover, &:focus {
+    background-color: $primary;
+    color: $body-bg;
+    border-color: $primary;
+  }
+}
+
+.btn-outline-danger {
+  color: $danger;
+  border-color: $danger;
+
+  &:hover, &:focus {
+    background-color: $danger;
+    color: $body-bg;
+    border-color: $danger;
+  }
+}
+
+// Titres
+h1 {
+  color: $secondary;
+  font-weight: 700;
+}
+
+// Tableaux
+table.table {
+  border: 2px solid $success;
+
+  thead {
+    background-color: $primary;
+    color: $body-bg;
+  }
+
+  tbody {
+    tr:hover {
+      background-color: rgba($success, 0.2); 
+    }
+
+    tr:nth-of-type(odd) {
+      background-color: #e6f0e9; 
+    }
+  }
+}
+
+.bg-dark {
+  background-color: $primary-dark !important; // même couleur que ta navbar
+}
+
+.btn-custom-danger {
+  background-color: $danger;
+  color: $body-bg;
+  border-color: $danger;
+
+  &:hover, &:focus {
+    background-color: darken($danger, 10%);
+    color: $body-bg;
+    border-color: darken($danger, 10%);
+  }
+}
+.btn-custom-success {
+  background-color: $success;
+  color: $body-bg;  
+  border-color: $success;
+
+  &:hover, &:focus {
+    background-color: darken($success, 10%);
+    color: $body-bg;
+    border-color: darken($success, 10%);
+  }
+}
+
+.btn-outline-success {
+  color: $success;
+  border-color: $success;
+
+  &:hover, 
+  &:focus {
+    background-color: $success;
+    color: $body-bg;
+    border-color: $success;
+  }
+}

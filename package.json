@@ -1,0 +1,17 @@
+{
+  "name": "touchepasauxklaxon",
+  "version": "1.0.0",
+  "description": "README - Application de Covoiturage\r A/ Présentation générale",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --load-path=node_modules app/assets/scss/custom.scss public/assets/css/custom.css --no-source-map --style=compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^5.3.6",
+    "sass": "^1.89.0"
+  }
+}
