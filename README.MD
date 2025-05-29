@@ -8,41 +8,29 @@ B/ Fonctionnalités principales
 1. Gestion des utilisateurs
 
    Les utilisateurs peuvent créer un compte, se connecter, et accéder à leur tableau de bord.
-
    Ils peuvent visualiser les trajets disponibles, effectuer des réservations sur ces trajets, et consulter les informations de contact (email, téléphone) des conducteurs pour faciliter la communication.
 
 2. Tableau de bord utilisateur
 
    Affichage des trajets disponibles, uniquement ceux dont la date de départ est future.
-
    Possibilité de réserver des places sur les trajets.
-
    Consultation des coordonnées de la personne ayant proposé le trajet pour faciliter les échanges.
 
 3. Tableau de bord administrateur
 
    Accès restreint aux administrateurs.
-
    Gestion complète des utilisateurs (ajout, modification, suppression).
-
    Gestion des agences (villes, localisation).
-
    Gestion des trajets (création, modification, suppression).
-
    Affichage uniquement des trajets dont la date de départ est future.
-
    Protection par rôle, permettant un contrôle sécurisé des accès.
 
 C/ Structure et fonctionnement technique
 
     Le projet est basé sur PHP avec sessions pour la gestion des connexions.
-
     Bootstrap est utilisé pour l’interface graphique et la responsivité.
-
     Les données sont récupérées et affichées via des tableaux dynamiques.
-
     Les dates sont formatées en français (JJ/MM/AAAA) pour une meilleure lisibilité.
-
     Les trajets passés ne sont pas affichés pour éviter toute confusion.
 
 D/ Base de données
@@ -57,25 +45,45 @@ D/ Base de données
 
     Important : La base de données est à compléter et enrichir par le service RH et les administrateurs pour intégrer les informations spécifiques à l’entreprise et permettre une utilisation optimale dans le cadre d’autres projets.
 
-E/ Intégration dans un site existant
+E/ Initialisation du projet avec XAMPP
 
-Pour intégrer cette application au site web existant de votre entreprise, voici les étapes recommandées :
+1.  Prérequis
 
-    Pré-requis techniques :
+    XAMPP installé (PHP ≥ 7.4, Apache, MySQL).
 
-        Serveur web avec PHP installé (version 7.4+ recommandée).
+    Git installé pour cloner le dépôt.
 
-        Base de données compatible (MySQL, MariaDB, etc.).
+    Node.js & npm pour compiler les fichiers SCSS.
 
-        Accès FTP ou SSH pour uploader les fichiers.
+    Navigateur récent (Chrome, Firefox…).
 
-    Installation :
+2.  Étapes d'installation
+    Démarrage de XAMPP
 
-        Copier les fichiers de l’application dans un dossier dédié du serveur (ex: /covoiturage).
+        Ouvrir XAMPP Control Panel.
 
-        Configurer le fichier config.php avec les paramètres de connexion à la base de données de l’entreprise.
+    Démarrer Apache et MySQL.
+    Préparer le projet:
+    Dans le terminal:
+    cd C:\xampp\htdocs  
+     mkdir covoiturage
+    cd covoiturage
+    git clone https://github.com/TON_COMPTE/touchepasauxklaxon.git .
+    Installer les dépendances front-end
+    npm install
+    npm run build-css
+    Créer la base de données:
+    Créer une base nommée covoiturage
+    ou Importer le fichier SQL fourni
 
-        Importer le schéma SQL dans la base de données via phpMyAdmin ou un outil équivalent.
+    Configuration de la base de données:
+    app/config/database.php
+    return [
+    'host' => '....',
+    'dbname' => '....',
+    'user' => '....',
+    'password' => '....',
+    ];
 
     Connexion avec le site existant :
 
