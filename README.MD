@@ -36,13 +36,9 @@ C/ Structure et fonctionnement technique
 D/ Base de données
 
     La base de données contient les tables suivantes :
-
         utilisateurs (id, prénom, nom, email, rôle, etc.)
-
         agences (id, nom_ville)
-
         trajets (id, ville_depart, ville_arrivee, date_heure_depart, date_heure_arrivee, places_disponibles, places_total, contact)
-
     Important : La base de données est à compléter et enrichir par le service RH et les administrateurs pour intégrer les informations spécifiques à l’entreprise et permettre une utilisation optimale dans le cadre d’autres projets.
 
 E/ Initialisation du projet avec XAMPP
@@ -59,8 +55,7 @@ E/ Initialisation du projet avec XAMPP
 
 2.  Étapes d'installation
     Démarrage de XAMPP
-
-        Ouvrir XAMPP Control Panel.
+    Ouvrir XAMPP Control Panel.
 
     Démarrer Apache et MySQL.
     Préparer le projet:
@@ -80,25 +75,24 @@ E/ Initialisation du projet avec XAMPP
     app/config/database.php
     return [
     'host' => '....',
-    'dbname' => '....',
-    'user' => '....',
-    'password' => '....',
-    ];
+
+            'dbname' => '....',
+
+            'user' => '....',
+
+            'password' => '....',
+        ];
 
     Connexion avec le site existant :
 
         Ajouter un lien dans la navigation principale de votre site vers l’application de covoiturage.
-
-        Pour une intégration plus poussée, utiliser les sessions existantes pour gérer les connexions utilisateurs (adapter le système d’authentification).
-
+        Pour une intégration plus poussée, utiliser les sessions existantes pour gérer les connexions utilisateurs (adapter le système ’authentification).
         Harmoniser les styles CSS et les éléments graphiques pour un rendu cohérent avec le site principal.
 
     Sécurité :
 
         Veiller à bien configurer les permissions des fichiers.
-
         Mettre en place un certificat SSL (HTTPS) pour sécuriser les échanges.
-
         Vérifier les rôles utilisateurs pour éviter les accès non autorisés.
 
 F/ Conclusion
