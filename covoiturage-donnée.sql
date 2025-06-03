@@ -53,5 +53,5 @@ INSERT INTO `trajets` (`agence_depart_id`, `agence_arrivee_id`, `date_heure_depa
 (1, 7, '2025-07-15 14:00:00', '2025-07-15 16:30:00', 5, 5, 19),
 (7, 1, '2025-07-28 12:00:00', '2025-07-28 14:00:00', 3, 3, 6);
 
-INSERT INTO `reservations` (`id`, `trajet_id`, `employe_id`, `places`, `created_at`) VALUES
-(10, 31, 29, 1, '2025-05-27 14:39:24');
+INSERT INTO `reservations` (`trajet_id`, `employe_id`, `places`, `created_at`)
+VALUES (1, 29, 1, '2025-05-27 14:39:24');
