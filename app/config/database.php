@@ -1,10 +1,26 @@
 <?php
 class Database {
-    private $host = '';
-    private $db_name = '';
-    private $username = '';
-    private $password = '';
+    private $host;
+    private $db_name;
+    private $username;
+    private $password;
     public $conn;
+
+  public function __construct() {
+    $envPath = dirname(__DIR__, 2) . '/.env';
+
+    if (file_exists($envPath)) {
+        $env = parse_ini_file($envPath);
+        $this->host = $env['DB_HOST'] ?? 'localhost';
+        $this->db_name = $env['DB_NAME'] ?? 'covoiturage';
+        $this->username = $env['DB_USER'] ?? 'root';
+        $this->password = $env['DB_PASS'] ?? '';
+    } else {
+        die('Fichier .env introuvable');
+    }
+}
+
+
 
     public function connect() {
         $this->conn = null;
